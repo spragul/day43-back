@@ -89,7 +89,7 @@ router.post('/forgotpassword',async(req,res)=>{
     }
      const secret = process.env.SECRETKEY+user.password;
      let token = await jwt.sign({email:user.email,id:user._id},secret,{expiresIn:'15m'})
-     const link =`https://adorable-pithivier-7fc6b0.netlify.app/${user._id}/${token}`
+     const link =`https://adorable-pithivier-7fc6b0.netlify.app/resetpassword/${user._id}/${token}`
     var transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
