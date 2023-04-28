@@ -12,7 +12,7 @@ const saltRounds = 10
 
  const nodemailer = require("nodemailer");
 
-router.get('/',validate,function(req, res) {
+router.get('/',function(req, res) {
   try {
   let users ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb6l2E_LeIqISf34uNOVaVMaJGHww_BctSxA&usqp=CAU'
     res.status(200).send({
