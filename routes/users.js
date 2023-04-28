@@ -12,7 +12,7 @@ const saltRounds = 10
 
  const nodemailer = require("nodemailer");
 
-router.get('/',validate,async function(req, res) {
+router.get('/',validate,function(req, res) {
   try {
   let users ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb6l2E_LeIqISf34uNOVaVMaJGHww_BctSxA&usqp=CAU'
     res.status(200).send({
@@ -94,7 +94,7 @@ router.post('/forgotpassword',async(req,res)=>{
       service: 'gmail',
       auth: {
         user: process.env.G_MAIL,
-        pass: process.env.G_MAIL_PASSWORD,  //tbcxshgmfhrieftz
+        pass: process.env.G_MAIL_PASSWORD,  
       }
     });
     let gmailId= await UserModel.findOne({email:req.body.email})
